@@ -68,18 +68,19 @@ export function HeroSection() {
   )
 }
 
-function StatCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
+ffunction StatCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
   return (
-    <div className="flex items-center gap-4 p-6 bg-background/80 backdrop-blur-sm rounded-xl border border-border">
-      <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+    <div className="flex items-center gap-3 p-4 bg-background/80 backdrop-blur-sm rounded-xl border border-border">
+      <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
         {icon}
       </div>
-      <div>
-        <div className="text-2xl font-bold text-foreground" style={{ fontFamily: 'var(--font-heading)' }}>
+      <div className="min-w-0">
+        <div className="text-xl font-bold text-foreground whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
           {value}
         </div>
-        <div className="text-sm text-muted-foreground">{label}</div>
+        <div className="text-xs text-muted-foreground whitespace-nowrap">{label}</div>
       </div>
     </div>
   )
+
 }

@@ -14,12 +14,13 @@ const contactInfo = [
     value: "+420 720 077 921",
     href: "tel:+420720077921"
   },
-  {
-    icon: Mail,
-    label: "E-mail",
-    value: "stastny.post@seznam.cz",
-    href: "mailto:stastny.post@seznam.cz"
-  },
+  
+    {
+  icon: Mail,
+  label: "E-mail",
+  value: "stastny.post\n@seznam.cz",
+  href: "mailto:stastny.post@seznam.cz"
+},
   {
     icon: MapPin,
     label: "Adresa",
