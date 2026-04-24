@@ -68,7 +68,7 @@ export function HeroSection() {
   )
 }
 
-ffunction StatCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
+function StatCard({ icon, value, label }: { icon: React.ReactNode; value: string; label: string }) {
   return (
     <div className="flex items-center gap-3 p-4 bg-background/80 backdrop-blur-sm rounded-xl border border-border">
       <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
