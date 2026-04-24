@@ -1,11 +1,11 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Mail, MapPin, CreditCard, Send } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
 
 const contactInfo = [
   {
@@ -23,13 +23,13 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Adresa",
-    value: "Hálkova 591, Humpolec",
+    value: "Hálkova 591, 396 01 Humpolec",
     href: "https://maps.google.com/?q=Hálkova+591+Humpolec"
   },
   {
-    icon: CreditCard,
+    icon: Clock,
     label: "Platba",
-    value: "Hotovost i převodem",
+    value: "Hotovost i převodem na účet",
     href: null
   }
 ]
@@ -45,6 +45,7 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    // In production, this would send to an API
     setSubmitted(true)
   }
 
@@ -52,38 +53,38 @@ export function ContactSection() {
     <section id="kontakt" className="py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2
+          <h2 
             className="text-3xl md:text-4xl font-bold text-foreground mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Kontaktujte nás
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Máte zájem o kurz nebo otázky? Neváhejte nás kontaktovat.
+            Máte zájem o kurz nebo otázky? Neváhejte nás kontaktovat. 
             Rádi vám odpovíme a pomůžeme s výběrem.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           <div>
-            <div className="grid grid-cols-2 gap-3 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {contactInfo.map((item) => (
                 <Card key={item.label} className="border-border">
-                  <CardContent className="flex items-center gap-3 p-4">
-                    <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-4 h-4" />
+                  <CardContent className="flex items-start gap-4 pt-6">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5" />
                     </div>
-                    <div className="min-w-0">
-                      <div className="text-xs text-muted-foreground mb-0.5">{item.label}</div>
+                    <div>
+                      <div className="text-sm text-muted-foreground mb-1">{item.label}</div>
                       {item.href ? (
-                        
-                          href={item.href}
-                          className="text-sm font-medium text-foreground hover:text-primary transition-colors truncate block"
+                        <a 
+                          href={item.href} 
+                          className="text-foreground font-medium hover:text-primary transition-colors"
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <span className="text-sm font-medium text-foreground block">{item.value}</span>
+                        <span className="text-foreground font-medium">{item.value}</span>
                       )}
                     </div>
                   </CardContent>
@@ -95,7 +96,7 @@ export function ContactSection() {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20671.27851738659!2d15.333!3d49.541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d0193e73f9c6d%3A0x400af0f66150a20!2sHumpolec!5e0!3m2!1sen!2scz!4v1699000000000!5m2!1sen!2scz"
                 width="100%"
-                height="220"
+                height="200"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -113,7 +114,7 @@ export function ContactSection() {
                   <div className="w-16 h-16 bg-accent/20 text-accent rounded-full flex items-center justify-center mx-auto mb-4">
                     <Send className="w-8 h-8" />
                   </div>
-                  <h3
+                  <h3 
                     className="text-xl font-bold text-foreground mb-2"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
