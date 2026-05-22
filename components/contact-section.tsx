@@ -2,8 +2,11 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+
+const ease = [0.22, 1, 0.36, 1] as const
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -22,17 +25,28 @@ export function ContactSection() {
   return (
     <section id="kontakt" className="py-20 md:py-28 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 max-w-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease }}
+          className="mb-14 max-w-xl"
+        >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Kontakt
           </h2>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease }}
+          >
             <dl className="space-y-7 mb-12">
               <div>
                 <dt className="text-xs text-muted-foreground uppercase tracking-[0.15em] mb-1.5">
@@ -109,9 +123,14 @@ export function ContactSection() {
                 />
               </div>
             </a>
-          </div>
+          </motion.div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease, delay: 0.1 }}
+          >
             {submitted ? (
               <div className="py-16">
                 <h3
@@ -201,7 +220,7 @@ export function ContactSection() {
                 </p>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

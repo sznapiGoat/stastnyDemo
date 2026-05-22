@@ -1,4 +1,9 @@
+"use client"
+
 import Image from "next/image"
+import { motion } from "framer-motion"
+
+const ease = [0.22, 1, 0.36, 1] as const
 
 export function HeroSection() {
   return (
@@ -16,21 +21,42 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="max-w-2xl">
-          <p className="text-[var(--amber)] text-xs font-medium tracking-[0.2em] uppercase mb-8">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease, delay: 0.1 }}
+            className="text-[var(--amber)] text-xs font-medium tracking-[0.2em] uppercase mb-8"
+          >
             Humpolec · Skupina B
-          </p>
-          <h1
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.75, ease, delay: 0.22 }}
             className="text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white mb-6 leading-[1.0]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Vaše cesta<br />
             <em className="font-light text-[var(--amber)]">za volant</em>
-          </h1>
-          <p className="text-lg md:text-xl text-white/65 mb-10 leading-relaxed max-w-lg">
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease, delay: 0.38 }}
+            className="text-lg md:text-xl text-white/65 mb-10 leading-relaxed max-w-lg"
+          >
             Jiří Šťastný — zkušený instruktor s individuálním přístupem.
             Od první lekce po složení závěrečné zkoušky.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease, delay: 0.52 }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
             <a
               href="#kontakt"
               className="inline-flex items-center justify-center bg-[var(--amber)] text-[var(--navy-deep)] px-8 py-4 text-base font-semibold hover:bg-[var(--amber)]/90 transition-colors"
@@ -43,7 +69,7 @@ export function HeroSection() {
             >
               Zobrazit ceník
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

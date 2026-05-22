@@ -1,3 +1,7 @@
+"use client"
+
+import { motion } from "framer-motion"
+
 const services = [
   {
     num: "01",
@@ -25,22 +29,37 @@ const services = [
   },
 ]
 
+const ease = [0.22, 1, 0.36, 1] as const
+
 export function ServicesSection() {
   return (
     <section id="sluzby" className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 max-w-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease }}
+          className="mb-14 max-w-xl"
+        >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Co nabízíme
           </h2>
-        </div>
+        </motion.div>
 
         <div className="divide-y divide-border">
-          {services.map((service) => (
-            <div key={service.num} className="flex gap-8 py-8 md:py-10">
+          {services.map((service, i) => (
+            <motion.div
+              key={service.num}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, ease, delay: i * 0.08 }}
+              className="flex gap-8 py-8 md:py-10"
+            >
               <span className="text-xs font-mono text-muted-foreground pt-1.5 w-7 flex-shrink-0 select-none">
                 {service.num}
               </span>
@@ -55,7 +74,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

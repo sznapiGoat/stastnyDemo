@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { FileText, ExternalLink } from "lucide-react"
 
 const resources = [
@@ -18,11 +21,19 @@ const resources = [
   },
 ]
 
+const ease = [0.22, 1, 0.36, 1] as const
+
 export function DownloadsSection() {
   return (
     <section className="py-20 md:py-28 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 max-w-xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease }}
+          className="mb-14 max-w-xl"
+        >
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
@@ -32,15 +43,19 @@ export function DownloadsSection() {
           <p className="mt-4 text-muted-foreground text-base">
             Formuláře potřebné před zahájením kurzu a odkaz na přípravu k teorii.
           </p>
-        </div>
+        </motion.div>
 
         <div className="divide-y divide-border">
-          {resources.map((r) => (
-            <a
+          {resources.map((r, i) => (
+            <motion.a
               key={r.label}
               href={r.href}
               target="_blank"
               rel="noopener noreferrer"
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease, delay: i * 0.1 }}
               className="flex items-center justify-between py-7 group"
             >
               <div className="flex items-start gap-5">
@@ -56,7 +71,7 @@ export function DownloadsSection() {
                 </div>
               </div>
               <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-accent transition-colors flex-shrink-0 ml-4" />
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>
