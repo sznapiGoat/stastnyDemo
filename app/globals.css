@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Warm cream background, deep navy text, amber accent */
+  --background:          oklch(0.972 0.006 80);
+  --foreground:          oklch(0.165 0.045 253);
+  --card:                oklch(1 0 0);
+  --card-foreground:     oklch(0.165 0.045 253);
+  --popover:             oklch(1 0 0);
+  --popover-foreground:  oklch(0.165 0.045 253);
+  --primary:             oklch(0.165 0.045 253);   /* deep navy */
+  --primary-foreground:  oklch(0.99 0 0);
+  --secondary:           oklch(0.952 0.008 80);
+  --secondary-foreground: oklch(0.25 0.04 253);
+  --muted:               oklch(0.952 0.008 80);
+  --muted-foreground:    oklch(0.50 0.03 247);
+  --accent:              oklch(0.785 0.155 75);    /* warm amber #F0B429 */
+  --accent-foreground:   oklch(0.165 0.045 253);   /* navy on amber */
+  --destructive:         oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border:              oklch(0.888 0.010 85);
+  --input:               oklch(0.888 0.010 85);
+  --ring:                oklch(0.165 0.045 253);
+  --radius:              0.625rem;
+
+  /* Hero dark overlay colour */
+  --navy-deep:           #060f1c;
+  --navy:                #0C1A2B;
+  --amber:               #F0B429;
+}
+
+/* Keep dark mode variables passable but we don't actively use dark mode on this site */
+.dark {
+  --background:          oklch(0.11 0.035 253);
+  --foreground:          oklch(0.985 0 0);
+  --card:                oklch(0.145 0 0);
+  --card-foreground:     oklch(0.985 0 0);
+  --primary:             oklch(0.785 0.155 75);
+  --primary-foreground:  oklch(0.11 0.035 253);
+  --muted:               oklch(0.20 0.02 253);
+  --muted-foreground:    oklch(0.65 0.02 253);
+  --accent:              oklch(0.785 0.155 75);
+  --accent-foreground:   oklch(0.11 0.035 253);
+  --border:              oklch(0.25 0.02 253);
+  --input:               oklch(0.25 0.02 253);
+}
+
+@theme inline {
+  --font-sans:    var(--font-dm-sans), system-ui, sans-serif;
+  --font-heading: var(--font-fraunces), Georgia, serif;
+  --font-mono:    'Geist Mono', monospace;
+
+  --color-background:         var(--background);
+  --color-foreground:         var(--foreground);
+  --color-card:               var(--card);
+  --color-card-foreground:    var(--card-foreground);
+  --color-popover:            var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary:            var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary:          var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:              var(--muted);
+  --color-muted-foreground:   var(--muted-foreground);
+  --color-accent:             var(--accent);
+  --color-accent-foreground:  var(--accent-foreground);
+  --color-destructive:        var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border:             var(--border);
+  --color-input:              var(--input);
+  --color-ring:               var(--ring);
+  --radius-sm:  calc(var(--radius) - 4px);
+  --radius-md:  calc(var(--radius) - 2px);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+  }
+}
