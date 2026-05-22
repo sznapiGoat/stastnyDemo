@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -84,19 +85,30 @@ export function ContactSection() {
               </div>
             </dl>
 
-            <div className="overflow-hidden border border-border">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20671.27851738659!2d15.333!3d49.541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d0193e73f9c6d%3A0x400af0f66150a20!2sHumpolec!5e0!3m2!1sen!2scz!4v1699000000000!5m2!1sen!2scz"
-                width="100%"
-                height="200"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa Humpolec"
-                className="grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
+            <a
+              href="https://maps.google.com/?q=Hálkova+591+Humpolec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid grid-cols-2 overflow-hidden border border-border group"
+              aria-label="Otevřít v Google Maps"
+            >
+              <div className="relative h-40">
+                <Image
+                  src="/stastny1.jpg"
+                  alt="Humpolec — náměstí"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="relative h-40">
+                <Image
+                  src="/stastny2.jpg"
+                  alt="Humpolec — pohled z výšky"
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </a>
           </div>
 
           <div>
