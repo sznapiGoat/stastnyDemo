@@ -14,6 +14,11 @@ const pricingItems = [
     note: "Individuální jízdy pro zkušené i začínající řidiče",
   },
   {
+    name: "Vrácení řidičského oprávnění",
+    price: "2 400 Kč",
+    note: "1 jízda + zkouška",
+  },
+  {
     name: "Školení začínajících řidičů",
     price: "2 400 Kč",
     note: "Zákonem povinné při dosažení 6 bodů v prvních 2 letech",
