@@ -13,7 +13,7 @@ const services = [
     num: "02",
     title: "Vrácení řidičského oprávnění",
     description:
-      "Přímé vyřízení pro řidiče, kteří přišli o řidičské oprávnění. Stačí jedna jízda a zkouška – vrátíme vás za volant bez zbytečných průtahů.",
+      "Přímé vyřízení pro řidiče, kteří přišli o řidičské oprávnění. Stačí jedna jízda a zkouška pro opětovné získání průkazu.",
   },
   {
     num: "03",
@@ -25,7 +25,7 @@ const services = [
     num: "04",
     title: "Školení začínajících řidičů",
     description:
-      "(šestibodový přestupek do 2 let od získání ŘO) Zákonem povinné školení při dosažení 6 bodů v prvních 2 letech řízení. Profesionální a rychlé vyřízení bez zbytečných průtahů.",
+      "Zákonem povinné školení při dosažení 6 bodů v prvních 2 letech od získání řidičského průkazu. Profesionální a rychlé vyřízení.",
   },
 ]
 

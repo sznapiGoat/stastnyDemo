@@ -6,7 +6,7 @@ const pricingItems = [
   {
     name: "Kurz skupiny B",
     price: "20 000 Kč",
-    note: "Kompletní kurz — teorie + 28 hodin jízd s instruktorem",
+    note: "Kompletní kurz: teorie i 28 hodin praktické jízdy",
   },
   {
     name: "Kondiční jízdy",

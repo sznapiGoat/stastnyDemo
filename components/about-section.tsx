@@ -28,7 +28,7 @@ export function AboutSection() {
               className="text-muted-foreground leading-relaxed mb-4 text-base"
             >
               Jiří Šťastný vyučuje s individuálním přístupem ke každému studentovi.
-              Jízdy probíhají v klidném tempu bez zbytečného tlaku — cílem je,
+              Jízdy probíhají v klidném tempu bez zbytečného tlaku. Cílem je,
               abyste se za volantem cítili skutečně sebejistě, nejen složili zkoušku.
             </motion.p>
             <motion.p
@@ -39,8 +39,8 @@ export function AboutSection() {
               className="text-muted-foreground leading-relaxed text-base"
             >
               Výcvik probíhá na vozidle{" "}
-              <strong className="text-foreground font-semibold">Hyundai i20</strong> —
-              moderní a bezpečné auto vhodné pro začátečníky i pokročilé.
+              <strong className="text-foreground font-semibold">Hyundai i20</strong>,
+              moderní auto vhodné pro začátečníky i pokročilé.
               Výuka dostupná v Humpolci a blízkém okolí.
             </motion.p>
           </div>

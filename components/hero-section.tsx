@@ -47,8 +47,8 @@ export function HeroSection() {
             transition={{ duration: 0.7, ease, delay: 0.38 }}
             className="text-lg md:text-xl text-white/65 mb-10 leading-relaxed max-w-lg"
           >
-            Jiří Šťastný — zkušený instruktor s individuálním přístupem.
-            Od první lekce po složení závěrečné zkoušky.
+            Zkušený instruktor Jiří Šťastný.
+            Individuální přístup od první lekce po složení závěrečné zkoušky.
           </motion.p>
 
           <motion.div
