@@ -77,7 +77,7 @@ export function TestimonialsSection() {
           className="mt-14 pt-8 border-t border-border"
         >
           <a
-            href="https://share.google/8Xuj8h5xEpxmeMde7"
+            href="https://share.google/hGl31uUcnb0ecEbOG"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
