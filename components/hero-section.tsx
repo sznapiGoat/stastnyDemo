@@ -14,6 +14,7 @@ export function HeroSection() {
           alt="Řízení auta"
           fill
           className="object-cover object-center"
+          sizes="100vw"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy-deep)]/92 via-[var(--navy-deep)]/70 to-[var(--navy-deep)]/25" />

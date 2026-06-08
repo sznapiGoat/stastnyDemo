@@ -6,13 +6,15 @@ const dmSans = DM_Sans({
   subsets: ['latin', 'latin-ext'],
   weight: ['300', '400', '500', '600'],
   variable: '--font-dm-sans',
+  display: 'swap',
 })
 
 const fraunces = Fraunces({
   subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '600', '700', '800', '900'],
+  weight: ['300', '400', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-fraunces',
+  display: 'swap',
 })
 
 const siteUrl = 'https://stastnyautoskola.cz'
