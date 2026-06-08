@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   category: 'Autoškola',
-  verification: process.env.GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
-    : undefined,
+  verification: {
+    google: 'nlK4KezKpPncw1EIRKemwWKAEbtNpRn960XUmQ0IUtc',
+  },
   formatDetection: {
     telephone: true,
     email: true,
