@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const pricingItems = [
   {
     name: "Kurz skupiny B",
-    price: "20 000 Kč",
+    price: "21 000 Kč",
     note: "Kompletní kurz: teorie i 28 hodin praktické jízdy",
   },
   {
@@ -15,7 +15,7 @@ const pricingItems = [
   },
   {
     name: "Vrácení řidičského oprávnění",
-    price: "2 400 Kč",
+    price: "4 000 Kč",
     note: "1 jízda + zkouška",
   },
   {
