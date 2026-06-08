@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/auto1.png',
-        width: 1200,
-        height: 630,
+        width: 680,
+        height: 1020,
         alt: 'Autoškola Šťastný Humpolec – výcvikové vozidlo Hyundai i20',
       },
     ],

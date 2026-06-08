@@ -53,12 +53,12 @@ export function AboutSection() {
             transition={{ duration: 0.65, ease, delay: 0.08 }}
             className="flex flex-col gap-6 pt-2 lg:pt-10"
           >
-            <div className="group relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-xl shadow-lg bg-secondary">
+            <div className="group relative aspect-[2/3] w-full max-w-sm overflow-hidden rounded-xl shadow-lg bg-secondary">
               <Image
                 src="/auto1.png"
                 alt="Výcvikové vozidlo Hyundai i20"
                 fill
-                className="object-cover object-center [filter:brightness(1.12)_contrast(1.06)_saturate(1.1)] transition-transform duration-700 ease-out group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 384px"
               />
             </div>
