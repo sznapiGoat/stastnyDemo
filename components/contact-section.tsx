@@ -22,30 +22,20 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError(null)
-
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
-    if (!accessKey) {
-      setError("Formulář zatím není nastavený. Kontaktujte nás prosím telefonicky nebo e-mailem.")
-      return
-    }
-
     setSending(true)
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://formspree.io/f/xvznaldp", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: accessKey,
-          subject: "Nová poptávka z webu Autoškola Šťastný",
-          from_name: formState.name,
           name: formState.name,
           email: formState.email,
           phone: formState.phone,
           message: formState.message,
+          _subject: "Nová poptávka z webu Autoškola Šťastný",
         }),
       })
-      const data = await res.json()
-      if (data.success) {
+      if (res.ok) {
         setSubmitted(true)
       } else {
         setError("Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nás kontaktujte telefonicky.")
