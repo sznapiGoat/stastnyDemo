@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { FileText, ExternalLink } from "lucide-react"
 
 const resources = [
@@ -27,7 +27,7 @@ export function DownloadsSection() {
   return (
     <section className="py-20 md:py-28 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -43,11 +43,11 @@ export function DownloadsSection() {
           <p className="mt-4 text-muted-foreground text-base">
             Formuláře potřebné před zahájením kurzu a odkaz na přípravu k teorii.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="divide-y divide-border">
           {resources.map((r, i) => (
-            <motion.a
+            <m.a
               key={r.label}
               href={r.href}
               target="_blank"
@@ -71,7 +71,7 @@ export function DownloadsSection() {
                 </div>
               </div>
               <ExternalLink className="w-4 h-4 text-muted-foreground/40 group-hover:text-accent transition-colors flex-shrink-0 ml-4" />
-            </motion.a>
+            </m.a>
           ))}
         </div>
       </div>

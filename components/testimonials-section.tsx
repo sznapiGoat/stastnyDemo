@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { ExternalLink } from "lucide-react"
 
 const testimonials = [
@@ -32,7 +32,7 @@ export function TestimonialsSection() {
   return (
     <section id="reference" className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -45,11 +45,11 @@ export function TestimonialsSection() {
           >
             Co říkají absolventi
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-10">
           {testimonials.map((t, i) => (
-            <motion.blockquote
+            <m.blockquote
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -65,11 +65,11 @@ export function TestimonialsSection() {
               <footer className="text-sm text-muted-foreground font-medium tracking-wide">
                 — {t.name}
               </footer>
-            </motion.blockquote>
+            </m.blockquote>
           ))}
         </div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -90,7 +90,7 @@ export function TestimonialsSection() {
               <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
           </a>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

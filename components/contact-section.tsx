@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -16,16 +16,51 @@ export function ContactSection() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setError(null)
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    if (!accessKey) {
+      setError("Formulář zatím není nastavený. Kontaktujte nás prosím telefonicky nebo e-mailem.")
+      return
+    }
+
+    setSending(true)
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: "Nová poptávka z webu Autoškola Šťastný",
+          from_name: formState.name,
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          message: formState.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError("Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nás kontaktujte telefonicky.")
+      }
+    } catch {
+      setError("Zprávu se nepodařilo odeslat. Zkuste to prosím znovu, nebo nás kontaktujte telefonicky.")
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
     <section id="kontakt" className="py-20 md:py-28 bg-secondary/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -38,10 +73,10 @@ export function ContactSection() {
           >
             Kontakt
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -123,9 +158,9 @@ export function ContactSection() {
                 />
               </div>
             </a>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -211,16 +246,22 @@ export function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[var(--navy)] text-white px-8 py-4 text-base font-semibold hover:bg-[var(--navy-deep)] transition-colors"
+                  disabled={sending}
+                  className="w-full bg-[var(--navy)] text-white px-8 py-4 text-base font-semibold hover:bg-[var(--navy-deep)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Odeslat zprávu
+                  {sending ? "Odesílám…" : "Odeslat zprávu"}
                 </button>
+                {error && (
+                  <p className="text-sm text-red-600 text-center" role="alert">
+                    {error}
+                  </p>
+                )}
                 <p className="text-xs text-muted-foreground text-center">
                   Odesláním souhlasíte se zpracováním osobních údajů.
                 </p>
               </form>
             )}
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

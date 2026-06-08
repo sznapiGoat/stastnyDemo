@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 const pricingItems = [
   {
@@ -31,7 +31,7 @@ export function PricingSection() {
   return (
     <section id="cenik" className="py-20 md:py-28 bg-[var(--navy)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -47,11 +47,11 @@ export function PricingSection() {
           <p className="mt-4 text-white/55 text-base max-w-sm">
             Transparentní ceny bez skrytých poplatků. Platba hotovostí i převodem na účet.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="divide-y divide-white/10">
           {pricingItems.map((item, i) => (
-            <motion.div
+            <m.div
               key={item.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,26 +74,26 @@ export function PricingSection() {
               >
                 {item.price}
               </span>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease, delay: 0.3 }}
           className="mt-12 pt-8 border-t border-white/10"
         >
-          <motion.a
+          <m.a
             href="#kontakt"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="inline-flex items-center justify-center bg-[var(--amber)] text-[var(--navy-deep)] px-8 py-4 text-base font-semibold hover:bg-[var(--amber)]/90 transition-colors"
           >
             Mám zájem o kurz
-          </motion.a>
-        </motion.div>
+          </m.a>
+        </m.div>
       </div>
     </section>
   )

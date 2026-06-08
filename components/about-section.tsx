@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -11,7 +11,7 @@ export function AboutSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
           <div>
-            <motion.h2
+            <m.h2
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
@@ -20,8 +20,8 @@ export function AboutSection() {
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Váš instruktor
-            </motion.h2>
-            <motion.p
+            </m.h2>
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -31,8 +31,8 @@ export function AboutSection() {
               Jiří Šťastný vyučuje s individuálním přístupem ke každému studentovi.
               Jízdy probíhají v klidném tempu bez zbytečného tlaku. Cílem je,
               abyste se za volantem cítili skutečně sebejistě, nejen složili zkoušku.
-            </motion.p>
-            <motion.p
+            </m.p>
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
@@ -43,10 +43,10 @@ export function AboutSection() {
               <strong className="text-foreground font-semibold">Hyundai i20</strong>,
               moderní auto vhodné pro začátečníky i pokročilé.
               Výuka dostupná v Humpolci a blízkém okolí.
-            </motion.p>
+            </m.p>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -80,7 +80,7 @@ export function AboutSection() {
                 "Vozidlo Hyundai i20",
                 "Humpolec a okolí",
               ].map((item, i) => (
-                <motion.div
+                <m.div
                   key={item}
                   initial={{ opacity: 0, x: 12 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -90,10 +90,10 @@ export function AboutSection() {
                 >
                   <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
                   <span className="text-muted-foreground">{item}</span>
-                </motion.div>
+                </m.div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

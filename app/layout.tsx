@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Fraunces } from 'next/font/google'
 import './globals.css'
+import { MotionProvider } from '@/components/motion-provider'
 
 const dmSans = DM_Sans({
   subsets: ['latin', 'latin-ext'],
@@ -44,6 +45,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   category: 'Autoškola',
+  verification: process.env.GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+    : undefined,
   formatDetection: {
     telephone: true,
     email: true,
@@ -57,21 +61,12 @@ export const metadata: Metadata = {
     title: 'Autoškola Šťastný Humpolec | Řidičský průkaz skupiny B',
     description:
       'Řidičský průkaz skupiny B v Humpolci. Zkušený instruktor Jiří Šťastný, individuální přístup, výuka na voze Hyundai i20.',
-    images: [
-      {
-        url: '/auto1.png',
-        width: 680,
-        height: 1020,
-        alt: 'Autoškola Šťastný Humpolec – výcvikové vozidlo Hyundai i20',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Autoškola Šťastný Humpolec | Řidičský průkaz skupiny B',
     description:
       'Řidičský průkaz skupiny B v Humpolci. Zkušený instruktor Jiří Šťastný, individuální přístup.',
-    images: ['/auto1.png'],
   },
   robots: {
     index: true,
@@ -171,7 +166,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body className={`${dmSans.variable} ${fraunces.variable} font-sans antialiased bg-background text-foreground`}>
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   )

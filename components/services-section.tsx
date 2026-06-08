@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 const services = [
   {
@@ -35,7 +35,7 @@ export function ServicesSection() {
   return (
     <section id="sluzby" className="py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -48,11 +48,11 @@ export function ServicesSection() {
           >
             Co nabízíme
           </h2>
-        </motion.div>
+        </m.div>
 
         <div className="divide-y divide-border">
           {services.map((service, i) => (
-            <motion.div
+            <m.div
               key={service.num}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -75,7 +75,7 @@ export function ServicesSection() {
                   {service.description}
                 </p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
