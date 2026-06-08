@@ -57,21 +57,39 @@ export function HeroSection() {
             transition={{ duration: 0.6, ease, delay: 0.52 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a
+            <motion.a
               href="#kontakt"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center bg-[var(--amber)] text-[var(--navy-deep)] px-8 py-4 text-base font-semibold hover:bg-[var(--amber)]/90 transition-colors"
             >
               Nezávazná konzultace
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#cenik"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center border border-white/30 text-white px-8 py-4 text-base font-medium hover:border-white/60 hover:bg-white/5 transition-colors"
             >
               Zobrazit ceník
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease, delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-2"
+      >
+        <span className="text-white/40 text-[0.65rem] tracking-[0.2em] uppercase">Posunout</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.8, ease: "easeInOut", repeat: Infinity }}
+          className="w-px h-8 bg-gradient-to-b from-white/50 to-transparent"
+        />
+      </motion.div>
     </section>
   )
 }

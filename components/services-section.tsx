@@ -58,9 +58,10 @@ export function ServicesSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.55, ease, delay: i * 0.08 }}
-              className="flex gap-8 py-8 md:py-10"
+              whileHover={{ x: 6 }}
+              className="group flex gap-8 py-8 md:py-10 transition-colors hover:bg-secondary/40 rounded-lg px-2 -mx-2"
             >
-              <span className="text-xs font-mono text-muted-foreground pt-1.5 w-7 flex-shrink-0 select-none">
+              <span className="text-xs font-mono text-muted-foreground pt-1.5 w-7 flex-shrink-0 select-none transition-colors group-hover:text-accent">
                 {service.num}
               </span>
               <div className="flex-1 md:flex md:items-baseline md:justify-between md:gap-12">

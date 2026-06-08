@@ -85,12 +85,14 @@ export function PricingSection() {
           transition={{ duration: 0.5, ease, delay: 0.3 }}
           className="mt-12 pt-8 border-t border-white/10"
         >
-          <a
+          <motion.a
             href="#kontakt"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
             className="inline-flex items-center justify-center bg-[var(--amber)] text-[var(--navy-deep)] px-8 py-4 text-base font-semibold hover:bg-[var(--amber)]/90 transition-colors"
           >
             Mám zájem o kurz
-          </a>
+          </motion.a>
         </motion.div>
       </div>
     </section>
