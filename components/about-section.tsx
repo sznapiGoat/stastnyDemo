@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -52,6 +53,15 @@ export function AboutSection() {
             transition={{ duration: 0.65, ease, delay: 0.08 }}
             className="flex flex-col gap-6 pt-2 lg:pt-10"
           >
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-lg">
+              <Image
+                src="/auto1.png"
+                alt="Výcvikové vozidlo Hyundai i20"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
             <div>
               <div
                 className="text-2xl font-bold text-foreground"
