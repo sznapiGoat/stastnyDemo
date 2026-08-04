@@ -9,9 +9,19 @@ const pricingItems = [
     note: "Kompletní kurz: teorie i 28 hodin praktické jízdy",
   },
   {
+    name: "Individuální studijní plán",
+    price: "26 000 Kč",
+    note: "Výuka i jízdy přizpůsobené vašemu tempu a časovým možnostem",
+  },
+  {
     name: "Kondiční jízdy",
-    price: "700 Kč / hod",
+    price: "700 Kč / 45 minut",
     note: "Individuální jízdy pro zkušené i začínající řidiče",
+  },
+  {
+    name: "Opravná zkouška z praktické jízdy",
+    price: "700 Kč",
+    note: "Opakování praktické části závěrečné zkoušky",
   },
   {
     name: "Vrácení řidičského oprávnění",
